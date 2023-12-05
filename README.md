@@ -11,5 +11,6 @@
 
 # 執行 Angular
 
-啟動 Angular 時優先執行 main.ts，其中寫道platformBrowserDynamic().bootstrapModule(AppModule)，而 AppModule 作為參數傳遞 app.module.ts，此時讓 Angular 知道啟動時需要解析src/app底下的其他4個檔案，再將其運行至index.html。
+1. 優先執行 main.ts，確認是否有特殊 component
+2. 解析src/app底下的其他4個檔案，再將其運行至index.html
 ![螢幕擷取畫面 2023-12-05 162506](https://github.com/yuchi0307/Angular_note/assets/67968321/852c363b-5cb6-4ca0-8868-e5f17fd074d3)
