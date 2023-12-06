@@ -1,16 +1,22 @@
-# Angular_note
+# 目錄
+<ul>
+  <li>運作流程</li>
+</ul>
 
-小知識：Angular 使用 TypeScript ，但瀏覽器不懂 TypeScript，需先透過 CLI 編譯成 JS 才能呈現於瀏覽器。
 
-如果開啟專案並打開 index.html 資料夾可以發現 app-root，這是 CLI 為我們自動生成、將所有 component (src/app中所有檔案)結合在一起的 root component。
-```
-<body>
-  <app-root></app-root>
-</body>
-```
+# Angular 運作流程<br/>
+<h3> index.html > main.js > app.module.ts > app.component.ts </h3><br/>
 
-# 執行 Angular
+Angular 是模組(NgModule)為基礎的高度元件框架，模組內還可以有其他模組，執行時只會有一個始組模組(巨人)，始組巨人通常是但並非總是 AppModule。
 
-1. 優先執行 main.ts，確認是否有特殊 component
-2. 解析src/app底下的其他4個檔案，再將其運行至index.html
-![螢幕擷取畫面 2023-12-05 162506](https://github.com/yuchi0307/Angular_note/assets/67968321/852c363b-5cb6-4ca0-8868-e5f17fd074d3)
+![angulr01](https://github.com/yuchi0307/Angular_note/assets/67968321/f45141e3-0a50-460b-82d8-f4c6cbc14f67)
+
+在 main.ts 中有 AppModule ，打開 app.module.ts 可見 bootstrap 屬性指定 AppComponent 為起始元件。
+
+Anguler 透過元件呈現介面，元件又依附組件，一班來說會在起始模組中指定起始元件。
+
+![螢幕擷取畫面 2023-12-06 101901](https://github.com/yuchi0307/Angular_note/assets/67968321/9f10f970-ab5a-4680-89ce-37ab0d0016bc)
+
+@Component 裝飾器將 AppComponent 化為一個 Angular Component 並設定 html, css屬性，將網頁包含有 app-root 的標籤都替換成 ./app.component.html。
+
+![螢幕擷取畫面 2023-12-06 101939](https://github.com/yuchi0307/Angular_note/assets/67968321/b4d094f2-1c6d-4c96-8e29-0e7cfd55da9f)
